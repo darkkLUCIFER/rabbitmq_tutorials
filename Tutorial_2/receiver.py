@@ -15,6 +15,7 @@ def callback(ch, method, properties, body):
     print(f"[x] Receiver name: {properties.headers['name']}")
     time.sleep(10)
     print("[x] Done")
+    print(method)
     ch.basic_ack(delivery_tag=method.delivery_tag)  # send ack after process is done
 
 
