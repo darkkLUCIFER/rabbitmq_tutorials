@@ -14,6 +14,7 @@ ch_1.basic_publish(
     body=message,
     properties=pika.BasicProperties(
         delivery_mode=2,  # 2 for "persistent", 1 for "transient".
+        headers={"name": "amir"},
     )
 )
 print(f" [x] Sent message {message}")
